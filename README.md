@@ -32,7 +32,8 @@ Swan and Ethan.
 - [🔌 Enable Providers](#-enable-providers)  
   - [🌐 Ollama](#-ollama)  
 - [🗺️ Roadmap](#%EF%B8%8F-roadmap)  
-- [📜 License](#-license)  
+- [📜 License](#-license)
+- [⚙️ How to run](#-How-to-run)
 
 
 ### 🚀 Features
@@ -106,6 +107,7 @@ This project is licensed under the MIT License.
 
 > See the [LICENSE](LICENSE) file for details. We believe in the power and fairness of open-source software.
 
+## ⚙️ How to run
 
 ```
 make build-dev
