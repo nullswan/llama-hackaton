@@ -411,25 +411,7 @@ Output:
 {
 	'action': 'code',
 	'language': 'osascript',
-	'code': 'tell application "System Events"
-    open location "https://docs.google.com/document/create"
-    delay 5
-end tell
-
-tell application "System Events"
-    delay 2
-    keystroke "The Evolution of AI and Computing Experience"
-    keystroke return
-    keystroke return
-
-    set articleText to "Artificial Intelligence (AI) has significantly transformed the computing experience in recent years. From enhancing productivity to reshaping industries, AI plays a crucial role in today's technological advancements. "
-    
-    repeat with i from 1 to (count of characters in articleText)
-        keystroke (character i of articleText)
-        delay 0.05
-    end repeat
-end tell
-'
+	'code': 'tell application "System Events" \n\tlaunch application "Google Chrome" \n\ttell application "Google Chrome" to open location "https://docs.google.com/document/create" \n\tdelay 5 \n\tkeystroke "Hello World" \nend tell'
 }
 
 
