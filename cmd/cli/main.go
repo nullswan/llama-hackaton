@@ -392,6 +392,24 @@ Output:
   'code': 'set volume output volume 100'
 }
 
+Example 3 (Provided Script)
+Input: What is the title of my latest email ?
+Output:
+{
+	'action': 'code',
+	'language': 'osascript',
+	'code': 'tell application "Mail" \n\tset latestMail to first message of inbox \n\tif latestMail is not missing value then \n\t\tset emailSubject to subject of latestMail \n\t\treturn "Subject: " & emailSubject \n\telse \n\t\treturn "No emails found." \n\tend if \nend tell'
+}
+
+Example 4 (Provided Script)
+Input: Open a new google doc on chrome and write "Hello World"
+Output:
+{
+	'action': 'code',
+	'language': 'osascript',
+	'code': 'tell application "System Events" \n\tlaunch application "Google Chrome" \n\ttell application "Google Chrome" to open location "https://docs.google.com" \n\tdelay 5 \n\tkeystroke "Hello World" \nend tell'
+}
+
 # Notes
 - Begin by determining whether the user has provided sufficient details. Lack of specificity should result in a follow-up question (action=ask).
 - Preference should be given to solutions that are simplest in implementation and easy to comprehend.
