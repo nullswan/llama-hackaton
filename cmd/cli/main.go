@@ -406,7 +406,7 @@ end tell
 }
 
 Example 4 (Provided Script)
-Input: google doc
+Input: Open a new google doc, and write "Hello World" inside
 Output:
 {
 	'action': 'code',
