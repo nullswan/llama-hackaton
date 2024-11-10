@@ -25,18 +25,14 @@ Swan and Ethan.
 - [✨ Introduction](#nomi)  
   - [🚀 Features](#-features)  
   - [🤔 Why Nomi?](#-why-nomi)  
-  - [💼 Use Cases](#-use-cases)  
 - [🛠️ Get Started](#%EF%B8%8F-get-started)  
   - [💻 Linux & MacOS](#-linux--macos)  
   - [📟 Windows](#-windows)  
   - [🔧 Compile from Source](#-compile-from-source)  
 - [🔌 Enable Providers](#-enable-providers)  
   - [🌐 Ollama](#-ollama)  
-  - [🤖 OpenAI](#-openai)  
-  - [🔗 OpenRouter](#-openrouter)  
 - [🗺️ Roadmap](#%EF%B8%8F-roadmap)  
 - [📜 License](#-license)  
-- [🙏 Acknowledgments](#-acknowledgments)
 
 
 ### 🚀 Features
