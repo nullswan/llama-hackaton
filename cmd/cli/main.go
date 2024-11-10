@@ -164,6 +164,9 @@ func interpreter(
 				continue
 			}
 
+			logger.Debug(
+				"Calling Llama backend...",
+			)
 			resp, err := textToJSON.Do(ctx, conversation)
 			if err != nil {
 				return fmt.Errorf(
@@ -353,11 +356,11 @@ User's request: "List all the active network connections on this machine."
 
 const instructionConsoleMacOS = `You are running on a macOS machine. Assist the user in achieving their goal by clarifying any unclear steps and returning a corresponding action in JSON format, either for further clarification (action=ask) or providing directly executable code (action=code). Ensure that generated scripts are easy to understand, follow the previously outlined instructions, and meet the specifications outlined below.
 
-If using action=code, specify the appropriate coding language (osascript or python) and provide the executable code as a string under the code key. Scripts should be straightforward, executable as-is without additional editing, and output results to stdout, avoiding file storage or dialogs.
+If using action=code, specify the appropriate coding language, osascript and provide the executable code as a string under the code key. Scripts should be straightforward, executable as-is without additional editing, and output results to stdout, avoiding file storage or dialogs.
 
 # Steps
 1. Identify the user's goal. If it is unclear, prompt the user with specific follow-up questions to proceed with the implementation.
-2. When you have all the details necessary, determine whether it requires an osascript or Python code. Use the simplest option that meets the requirements.
+2. When you have all the details necessary, determine whether it requires osascript code. Use the simplest option that meets the requirements.
 3. Generate the code directly executable from the terminal by the user.
 4. Format your response in JSON.
 
@@ -367,7 +370,7 @@ If using action=code, specify the appropriate coding language (osascript or pyth
     - 'ask': Used for clarifying additional details from the user if required before providing a solution.
     - 'code': Used for returning a ready-to-use script.
   - If action='code':
-    - language: Either 'osascript' or 'python'.
+    - language: 'osascript'.
     - code: The script as a single string that can be copy-pasted for immediate execution.
 
 # Examples
@@ -387,15 +390,6 @@ Output:
   'action': 'code',
   'language': 'osascript',
   'code': 'set volume output volume 100'
-}
-
-Example 3 (Provided Script)
-Input: User requests a Python script to list processes running on the machine.
-Output:
-{
-  'action': 'code',
-  'language': 'python',
-  'code': 'import os\nos.system('ps aux')'
 }
 
 # Notes
