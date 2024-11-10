@@ -407,7 +407,7 @@ Output:
 {
 	'action': 'code',
 	'language': 'osascript',
-	'code': 'tell application "System Events" \n\tlaunch application "Google Chrome" \n\ttell application "Google Chrome" to open location "https://docs.google.com" \n\tdelay 5 \n\tkeystroke "Hello World" \nend tell'
+	'code': 'tell application "System Events" \n\tlaunch application "Google Chrome" \n\ttell application "Google Chrome" to open location "https://docs.google.com/document/create" \n\tdelay 5 \n\tkeystroke "Hello World" \nend tell'
 }
 
 # Notes
