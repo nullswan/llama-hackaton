@@ -14,7 +14,7 @@ require (
 	github.com/muesli/cancelreader v0.2.2
 	github.com/ollama/ollama v0.3.14
 	github.com/spf13/cobra v1.8.1
-	golang.org/x/sync v0.8.0
+	golang.org/x/sync v0.9.0
 	golang.org/x/term v0.25.0
 )
 
