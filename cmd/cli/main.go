@@ -384,15 +384,6 @@ Output:
 }
 
 Example 2 (Provided Script)
-Input: User requests a script to increase system volume to maximum.
-Output:
-{
-  'action': 'code',
-  'language': 'osascript',
-  'code': 'set volume output volume 100'
-}
-
-Example 3 (Provided Script)
 Input: What is the title of my latest email ?
 Output:
 {
@@ -401,14 +392,46 @@ Output:
 	'code': 'tell application "Mail" \n\tset latestMail to first message of inbox \n\tif latestMail is not missing value then \n\t\tset emailSubject to subject of latestMail \n\t\treturn "Subject: " & emailSubject \n\telse \n\t\treturn "No emails found." \n\tend if \nend tell'
 }
 
-Example 4 (Provided Script)
-Input: Open a new google doc on chrome and write "Hello World"
+Example 3 (Provided Script)
+Input: Open perplexity
 Output:
 {
 	'action': 'code',
 	'language': 'osascript',
-	'code': 'tell application "System Events" \n\tlaunch application "Google Chrome" \n\ttell application "Google Chrome" to open location "https://docs.google.com/document/create" \n\tdelay 5 \n\tkeystroke "Hello World" \nend tell'
+	'code': 'tell application "Google Chrome"
+    activate
+    open location "https://www.perplexity.ai/search?q=how+powerful+it+is+to+interact+with+computer+using+ai"
+end tell
+'
 }
+
+Example 4 (Provided Script)
+Input: google doc
+Output:
+{
+	'action': 'code',
+	'language': 'osascript',
+	'code': 'tell application "System Events"
+    open location "https://docs.google.com/document/create"
+    delay 5
+end tell
+
+tell application "System Events"
+    delay 2
+    keystroke "The Evolution of AI and Computing Experience"
+    keystroke return
+    keystroke return
+
+    set articleText to "Artificial Intelligence (AI) has significantly transformed the computing experience in recent years. From enhancing productivity to reshaping industries, AI plays a crucial role in today's technological advancements. "
+    
+    repeat with i from 1 to (count of characters in articleText)
+        keystroke (character i of articleText)
+        delay 0.05
+    end repeat
+end tell
+'
+}
+
 
 # Notes
 - Begin by determining whether the user has provided sufficient details. Lack of specificity should result in a follow-up question (action=ask).
