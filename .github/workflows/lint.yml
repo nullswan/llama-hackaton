@@ -20,9 +20,6 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Install Dependencies
-        run: bash hack/install-deps.sh
-
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
